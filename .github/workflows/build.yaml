@@ -1,0 +1,34 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the Git Repository
+        uses: actions/checkout@v2
+
+      - name: Install Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots verify -Pgithub
+
+      - name: Determine current version
+        id: release_version
+        run: echo ::set-output name=release_version::`mvn help:evaluate -Dexpression=project.version -q -DforceStdout`
+
+      - name: Generate site
+        if: success() && github.event_name == 'push'
+        run: mvn site:site -Pgithub
