@@ -1,0 +1,15 @@
+micronaut:
+  application:
+    name: ingestr-CE
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
+jackson:
+  serialization:
+    writeDatesAsTimestamps: false
+ingestion:
+  topicPattern: ingestr.loader.{loaderName}.raw.{topic}
+kafka:
+  bootstrapServers: localhost:9092
