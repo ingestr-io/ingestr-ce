@@ -55,6 +55,7 @@
 
     <modules>
         <module>ingestr-ce-loader</module>
+        <module>ingestr-ce-parent</module>
     </modules>
 
     <build>
