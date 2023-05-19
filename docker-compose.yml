@@ -1,0 +1,14 @@
+version: '2'
+services:
+  db:
+    network_mode: host
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    restart: "no"
+    network_mode: host
+    environment:
+      KAFKA_BROKERCONNECT: "localhost:9092"
+      JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"

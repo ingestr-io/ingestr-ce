@@ -1,6 +1,17 @@
 micronaut:
+  server:
+    cors:
+      enabled: true
+      configurations:
+        allowedOrigins:
+          - '*'
+        exposedHeaders:
+          - Content-Type
+          - Authorization
+          - '*'
+      single-header: true
   application:
-    name: ingestr-CE
+    name: extractor-CE
 endpoints:
   health:
     enabled: true
@@ -9,7 +20,26 @@ endpoints:
 jackson:
   serialization:
     writeDatesAsTimestamps: false
+
+hazelcast:
+  enabled: false
+
 ingestion:
-  topicPattern: ingestr.loader.{loaderName}.raw.{topic}
+  topicPattern: extractor.raw.{collection}.{topic}
+
 kafka:
+  enabled: true
+  embedded: true
   bootstrapServers: localhost:9092
+
+logger:
+  topic: extractor.events.log
+  partitions: 50
+
+repository:
+  topic: extractor.repositories
+  partitions: 16
+
+metrics:
+  topic: extractor.metrics
+  partitions: 50

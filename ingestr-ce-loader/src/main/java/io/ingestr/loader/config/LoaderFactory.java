@@ -1,7 +1,7 @@
 package io.ingestr.loader.config;
 
-import io.ingestr.framework.service.workers.lock.LoaderLock;
-import io.ingestr.framework.service.workers.lock.LoaderLockImpl;
+import io.ingestr.framework.service.lock.LoaderLock;
+import io.ingestr.framework.service.lock.LoaderLockImpl;
 import io.micronaut.context.annotation.Factory;
 import jakarta.inject.Singleton;
 

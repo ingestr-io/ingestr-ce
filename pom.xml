@@ -56,6 +56,7 @@
     <modules>
         <module>ingestr-ce-loader</module>
         <module>ingestr-ce-parent</module>
+        <module>ingestr-ce-java-example</module>
     </modules>
 
     <build>
@@ -76,7 +77,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.20</version>
+                <version>1.18.22</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.kafka</groupId>

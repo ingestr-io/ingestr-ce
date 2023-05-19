@@ -1,7 +1,7 @@
 package io.ingestr.loader.config;
 
 import io.ingestr.framework.kafka.KafkaAdminService;
-import io.ingestr.framework.service.db.LoaderDefinitionServices;
+import io.ingestr.framework.service.db.ExtractorDefinitionServices;
 import io.ingestr.framework.service.queue.*;
 import io.ingestr.loader.config.model.QueueConfiguration;
 import io.micronaut.context.annotation.Factory;
@@ -13,12 +13,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class QueueFactory {
     private KafkaAdminService kafkaAdminService;
-    private LoaderDefinitionServices loaderDefinitionServices;
+    private ExtractorDefinitionServices extractorDefinitionServices;
 
     @Inject
-    public QueueFactory(KafkaAdminService kafkaAdminService, LoaderDefinitionServices loaderDefinitionServices) {
+    public QueueFactory(KafkaAdminService kafkaAdminService, ExtractorDefinitionServices extractorDefinitionServices) {
         this.kafkaAdminService = kafkaAdminService;
-        this.loaderDefinitionServices = loaderDefinitionServices;
+        this.extractorDefinitionServices = extractorDefinitionServices;
     }
 
     @Singleton

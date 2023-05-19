@@ -10,7 +10,11 @@
     </appender>
     <logger name="org.apache.kafka.clients.consumer" level="warn"/>
 
-    <logger name="io.ingestr" level="debug"/>
+    <logger name="io.extractor" level="debug"/>
+    <logger name="kafka" level="warn"/>
+    <logger name="state" level="warn"/>
+    <logger name="org.apache.zookeeper" level="warn"/>
+    <logger name="org.apache.kafka" level="warn"/>
 
     <root level="info">
         <appender-ref ref="STDOUT" />

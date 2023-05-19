@@ -1,7 +1,7 @@
 package io.ingestr.loader.health;
 
-import io.ingestr.framework.service.workers.triggers.TriggerThread;
-import io.ingestr.framework.service.workers.triggers.TriggersService;
+import io.ingestr.framework.service.triggers.TriggerThread;
+import io.ingestr.framework.service.triggers.TriggersService;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.health.HealthStatus;
 import io.micronaut.management.endpoint.health.HealthEndpoint;
@@ -43,7 +43,7 @@ public class TriggersHealthIndicator implements HealthIndicator {
 
             for (TriggerThread tf : triggersService.getTriggerFunctions()) {
                 Map<String, String> details = new HashMap<>();
-                details.put("ingestion", String.valueOf(tf.getIngestion().getIdentifier()));
+                details.put("extractor", String.valueOf(tf.getIngestion().getIdentifier()));
 
                 //fail the overall health for this
                 if (!tf.isRunning()) {

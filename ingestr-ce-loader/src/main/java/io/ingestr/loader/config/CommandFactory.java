@@ -1,6 +1,6 @@
 package io.ingestr.loader.config;
 
-import io.ingestr.framework.service.gateway.*;
+import io.ingestr.framework.service.command.*;
 import io.micronaut.context.annotation.Factory;
 import jakarta.inject.Singleton;
 

@@ -1,10 +1,10 @@
 package io.ingestr.loader.config;
 
-import io.ingestr.framework.service.db.LoaderDefinitionServices;
+import io.ingestr.framework.service.db.ExtractorDefinitionServices;
 import io.ingestr.framework.service.logging.EventLogger;
 import io.ingestr.framework.service.logging.EventLoggerLogImpl;
 import io.ingestr.framework.service.logging.store.*;
-import io.micronaut.context.annotation.Factory;
+import io.ingestr.framework.service.logging.store.impl.memory.*;
 import io.micronaut.context.annotation.Requires;
 import jakarta.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.ArrayBlockingQueue;
 
 @Slf4j
-@Factory
 @Requires(property = "kafka.enabled", value = "false")
 public class LoggerServiceFactory {
 
@@ -23,12 +22,12 @@ public class LoggerServiceFactory {
 
     @Singleton
     public EventLogger loggerService(
-            LoaderDefinitionServices loaderDefinitionServices,
+            ExtractorDefinitionServices extractorDefinitionServices,
             EventBus eventBus) {
         log.info("Initializing In Memory Logger Service with Config");
         return new EventLoggerLogImpl(
-                eventBus,
-                loaderDefinitionServices.getLoaderDefinition().getLoaderName()
+                meterRegistry, eventBus,
+                extractorDefinitionServices.getExtractorDefinition().getName()
         );
     }
 

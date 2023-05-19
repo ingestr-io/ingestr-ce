@@ -1,6 +1,6 @@
-DELETE http://localhost:8080/data-descriptor/binance-kline/partitions/
+DELETE http://localhost:8080/data-descriptor/binance-kline/dataSets/
 ###
-POST http://localhost:8080/data-descriptor/binance-kline/partitions/YmluYW5jZS1rbGluZTpjdXJyZW5jeVBhaXI6QlRDVklDLHJlc29sdXRpb246MW0=/undelete
+POST http://localhost:8080/data-descriptor/binance-kline/dataSets/YmluYW5jZS1rbGluZTpjdXJyZW5jeVBhaXI6QlRDVklDLHJlc29sdXRpb246MW0=/undelete
 
 ###
-GET http://localhost:8080/data-descriptor/binance-kline/partitions/YmluYW5jZS1rbGluZTpjdXJyZW5jeVBhaXI6QlRDVklDLHJlc29sdXRpb246MW0=
+GET http://localhost:8080/data-descriptor/binance-kline/dataSets/YmluYW5jZS1rbGluZTpjdXJyZW5jeVBhaXI6QlRDVklDLHJlc29sdXRpb246MW0=

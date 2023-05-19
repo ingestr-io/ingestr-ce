@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-@ConfigurationProperties("ingestion")
+@ConfigurationProperties("extractor")
 @ToString
 public class IngestionConfiguration {
 
@@ -16,7 +16,7 @@ public class IngestionConfiguration {
      */
 
     private String topicPattern;
-//    = "ingestr.loaders.${loaderName}.ingestions.${topic}";
+//    = "extractor.loaders.${loaderName}.ingestions.${topic}";
 
 
     /**

@@ -15,7 +15,7 @@ public class QueueConfiguration {
      * The topic in which commands will be sent
      */
 
-    private String topic = "ingestr.consensus";
+    private String topic = "extractor.queue";
 
 
     /**

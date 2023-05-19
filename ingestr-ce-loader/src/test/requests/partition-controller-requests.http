@@ -1,1 +1,1 @@
-GET http://localhost:8080/data-descriptor/binance-kline/partition-registrator/trigger
+GET http://localhost:8080/data-descriptor/binance-kline/dataSet-registrator/trigger

@@ -20,7 +20,7 @@ public class CommandGatewayConfiguration {
      * Kafka Related Settings
      */
     private String bootstrapServers = "localhost:9092";
-    private String topic = "ingestr.commands";
+    private String topic = "extractor.commands";
     private String groupId;
     private Integer defaultPartitions = 32;
 

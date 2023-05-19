@@ -10,7 +10,7 @@
         </encoder>
     </appender>
     <logger name="org.apache.kafka.clients.consumer" level="warn"/>
-    <logger name="io.ingestr" level="debug"/>
+    <logger name="io.extractor" level="debug"/>
 
     <root level="info">
         <appender-ref ref="STDOUT"/>

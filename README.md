@@ -5,11 +5,11 @@ Framework functionalities to Loaders.
 
 It is automatically used by any new Loader initalised via the Ingestr CLI tool for creating a new Loader.
 
-If the Ingestr CLI is already installed, use the `ingestr init` command to initialize a new Loader.
+If the Ingestr CLI is already installed, use the `extractor init` command to initialize a new Loader.
 
 ## Documentation
 
-To read the full documentation about the Ingestr framework go to the [Documentation](https://ingestr.io/docs/latest) on
+To read the full documentation about the Ingestr framework go to the [Documentation](https://extractor.io/docs/latest) on
 the Ingestr.io website.
 
 ### Running integration tests

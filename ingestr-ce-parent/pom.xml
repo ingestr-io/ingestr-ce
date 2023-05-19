@@ -21,7 +21,7 @@
 
     <properties>
         <ingestr-maven-plugin.version>1.0.0</ingestr-maven-plugin.version>
-        <lombok.version>1.18.20</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
     </properties>
 
     <dependencies>
@@ -87,12 +87,6 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.7.2</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.ingestr</groupId>
-            <artifactId>ingestr-shared-loader-framework</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
 
         <dependency>
